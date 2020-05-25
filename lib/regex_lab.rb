@@ -1,19 +1,30 @@
-def starts_with_a_vowel?(word)
+class School
 
-end
+  def initialize(school_name)
+    @school_name = school_name
+    @roster = {}
+  end
 
-def words_starting_with_un_and_ending_with_ing(text)
+  def roster
+    @roster
+  end
 
-end
+  def add_student(name, grade)
+    @student_name = name
+    @grade = grade
+    if @roster.include?(grade) == false
+      @roster[grade] = []
+    end
+    @roster[grade] << name
+  end
 
-def words_five_letters_long(text)
+  def grade(number)
+    @roster[number]
+  end
 
-end
-
-def first_word_capitalized_and_ends_with_punctuation?(text)
-
-end
-
-def valid_phone_number?(phone)
-
+  def sort
+    @roster.each do |grade, name|
+      @roster[grade] = name.sort
+    end
+  end
 end
